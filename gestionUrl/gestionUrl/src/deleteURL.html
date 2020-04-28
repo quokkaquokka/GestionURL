@@ -1,0 +1,7 @@
+<template>
+  <h1>Delete Link</h1>
+  <div repeat.for="url of urls" >
+      <p>${url.title}
+          <button type="submit" class="button-right" click.delegate="deleteUrl(url.urlid)">Delete</button>
+      </p>
+</template>

@@ -1,0 +1,42 @@
+<template>
+    <div class="wrapper">
+        <h1> New URL</h1>
+        <form role="form" submit.delegate="submit()">
+            <span class="help-block" id="error"></span>
+            <div class="form-group">
+              <label for="fn">Title</label>
+              <input type="text" value.bind="title" class="form-control" id="title" placeholder="Title">
+            </div>
+            <div class="form-group">
+              <label for="ln">URL Link</label>
+              <input type="text" value.bind="urlLink" class="form-control" id="urlLink" placeholder="https://www.google.com/">
+            </div>
+            <div class="form-group">
+                <label for="ln">Category</label><br>
+                <select value.bind="selectedCategoryId">
+                    <option model.bind="null">Choose...</option>
+                    <option repeat.for="category of categories" model.bind="category.catid">
+                        ${category.title}
+                    </option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="ln">if there is no category, create a new one:</br>Category title</label>
+                <input type="text" value.bind="categoryName" class="form-control" id="category" placeholder="new title">
+            </div>
+            
+            <div class="form-group">
+                <label for="ln">Description</label>
+                <textarea type="text" value.bind="description" class="form-control" id="description"></textarea>
+            </div>
+
+            <div class="form-group">
+                    <label for="fn">Key words</label>
+                    <input type="text" value.bind="keyWords" class="form-control" id="keyWords" placeholder="example, illustration, case">
+                  </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</template>

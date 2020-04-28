@@ -1,0 +1,11 @@
+<template>
+  <div class="wrapper-myContent">
+      <h2>Delete Category</h2>
+      <div repeat.for="category of categories" >
+            <p>${category.title}
+                <button type="submit" class="deleteURL" click.delegate="deleteURL(category.catid)">${category.title}</button>
+                <button type="submit" class="button-right" click.delegate="deleteCategory(category.catid)">Delete</button>
+            </p>
+      </div>
+  </div>
+</template>

@@ -1,0 +1,45 @@
+<template>
+    <div class="wrapper-myContent">
+        <h1>my URL</h1>
+        <form role="form" submit.delegate="search()">
+            <div class="form-group">
+                <label for="fn">Key words</label></br>
+                <input type="text" value.bind="keyWords" class="form-control col-xs-6" id="keyWords" placeholder="example, illustration, case"><button type="submit" class="button-right">Search</button>
+            </div>
+            
+        </form>
+
+        <div class= "my-select-form">
+        </br>
+            <label>Select To choice Your link</label></br>
+            <select class="select-elt" size="6" value.bind="selectidCategory">
+                <option repeat.for="category of categories" model.bind="category.catid" click.delegate="geturl()" >${category.title} </option>
+            </select>
+            <select class="select-elt2" size="6" value.bind="selectidURL">
+                <option repeat.for="url of urls" model.bind="url.urlid" click.delegate="detail()"> ${url.title}</option>
+            </select>
+        </div>
+        <div class="urldetail">
+             <h1>Title      :  <a href="urldetail[0].link">${urldetail[0].title}</a>
+             </h1>
+             <table class= "">
+                <tr>
+                    <th>Category </th>
+                    <th>${catTitle}</th>
+                </tr>
+                <tr>
+                    <th>Link </th>
+                    <th><a href="urldetail[0].link">${urldetail[0].link}</a></th>
+                </tr>
+                <tr>
+                    <th>Description </th>
+                    <th>${urldetail[0].description}</th>
+                </tr>
+                <tr>
+                    <th>Keywords </th>
+                    <th>${urldetail[0].keyWord}</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</template>
